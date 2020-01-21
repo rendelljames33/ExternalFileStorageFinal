@@ -12,21 +12,28 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
+import java.io.File;
 
 import android.os.Environment;
 
 public class MainActivity extends AppCompatActivity {
     static final int READ_BLOCK_SIZE = 100;
+    final TextView wc = findViewById(R.id.textView);
+    final EditText textbox = findViewById(R.id.editText);
+    final Button read = findViewById(R.id.btnread);
+    final Button clear = findViewById(R.id.btnclear);
+    final Button write = findViewById(R.id.btnwrite);
+    File akongfile;
+    String akongGitype;
+    private String filename="moreno.test";
+    private String filepath="moreno_externalio";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final TextView wc = findViewById(R.id.textView);
-        final EditText textbox = findViewById(R.id.editText);
-        final Button read = findViewById(R.id.btnread);
-        final Button clear = findViewById(R.id.btnclear);
-        final Button write = findViewById(R.id.btnwrite);
+
+
 
         read.setOnClickListener(
                 new View.OnClickListener() {
